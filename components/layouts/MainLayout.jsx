@@ -13,7 +13,7 @@ export default function MainLayout({ children }) {
             <main className="container mx-auto px-5">
                 {children}
             </main>
-            {/* <Footer /> */}
+            <Footer />
         </div>
         </>
     )
