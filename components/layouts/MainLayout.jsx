@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import Header from '~/components/layouts/Header'
-import Footer from '~/components/layouts/Footer'
+import Header from '~/components/layouts/partials/Header'
+import Footer from '~/components/layouts/partials/Footer'
 
 export default function MainLayout({ children }) {
     return (
