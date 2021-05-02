@@ -4,7 +4,7 @@ import PokemonFilterRange from '~/components/PokemonFilterRange'
 import PokemonGrid from '~/components/PokemonGrid'
 
 export default function Pokedex() {
-    const [pokemonRangeFilter, setPokemonRangeFilter] = useState([0, 100])
+    const [pokemonRangeFilter, setPokemonRangeFilter] = useState([0, 251])
 
     return (
         <div>
