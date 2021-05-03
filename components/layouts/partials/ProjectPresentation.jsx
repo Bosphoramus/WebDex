@@ -1,7 +1,9 @@
 export default function ProjectPresentation() {
     return (
         <div className="space-y-6">
-            <img src="readme.svg" alt="" />
+            <a href="/pokedex">
+                <img src="readme.svg" alt="presentation graphic" />
+            </a>
             <div className="space-y-10">
                 <article className="space-y-4">
                     <h2 className="font-bold text-xl bg-gradient-to-r from-blue-700 via-blue-800 to-gray-900 bg-clip-text text-transparent">Project Summary</h2>
