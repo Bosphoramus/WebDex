@@ -6,7 +6,7 @@ export default function MainLayout({ children }) {
     return (
         <>
         <Head>
-            <title>Antonio's WebDex</title>
+            <title>Tony's WebDex</title>
             <meta name="color-scheme" content="dark light"></meta>
         </Head>
         <div className="pt-20 dark:bg-black dark:text-white">
