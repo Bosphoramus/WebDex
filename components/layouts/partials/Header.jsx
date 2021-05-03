@@ -5,7 +5,7 @@ import styles from '~/styles/header.module.css'
 
 export default function Header() {
     return (
-        <header className={`flex justify-center h-20 fixed top-0 inset-x-0 z-10 bg-white dark:bg-gray-900 ${styles.headerBg}`}>
+        <header className={`flex justify-center h-20 fixed top-0 inset-x-0 z-10 bg-white dark:bg-black ${styles.headerBg}`}>
             <div className="container flex p-5">
                 <Link href="/">
                     <a className="flex items-center space-x-3">
