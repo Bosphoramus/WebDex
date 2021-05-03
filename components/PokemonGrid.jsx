@@ -37,7 +37,7 @@ export default function PokemonGrid({ pokemonRangeFilter }) {
 
     if (pokemonQuery.isLoading) {
         return (
-            <div className="flex justify-center">
+            <div className="flex justify-center h-screen">
                 <div>
                     <Loading />
                     <p className="font-bold">Cargando Pokemon</p>
@@ -48,7 +48,7 @@ export default function PokemonGrid({ pokemonRangeFilter }) {
 
     if (pokemonQuery.isError) {
         return (
-            <div className="flex justify-center">
+            <div className="flex justify-center h-screen">
                 <div>
                     <p>Error cargando Pokemon: {pokemonQuery.error?.message}</p>
                 </div>
@@ -62,16 +62,16 @@ export default function PokemonGrid({ pokemonRangeFilter }) {
                 pokemonQuery.data.map(function (pokemon) {
                     return (
                         <div key={pokemon.id}>
-                            <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                            <div className="h-full border-2 border-gray-200 dark:border-gray-600 border-opacity-60 rounded-lg overflow-hidden shadow-lg">
                                 <img className="lg:h-48 md:h-36 mx-auto" src={pokemon.sprites.front_default} alt={pokemon.id} />
                                 <div className="p-6">
                                     <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">#{pokemon.id}</h2>
-                                    <h1 className="title-font text-lg font-medium text-gray-900 mb-3">{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h1>
+                                    <h1 className="title-font text-lg font-medium font-bold mb-3">{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h1>
                                     <div className="hidden md:block mb-2">
                                         {pokemon.description.replace(/(\f)/gm, " ")}
                                     </div>
                                     <div className="flex items-center flex-wrap ">
-                                        <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0" href={`https://pokemon.fandom.com/wiki/${pokemon.name}`}>Learn More
+                                        <a className="text-red-500 inline-flex items-center md:mb-2 lg:mb-0" href={`https://pokemon.fandom.com/wiki/${pokemon.name}`}>Learn More
                                                 <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} fill="none" strokeLinecap="round" strokeLinejoin="round">
                                                 <path d="M5 12h14" />
                                                 <path d="M12 5l7 7-7 7" />

@@ -1,6 +1,8 @@
+import styles from '~/styles/loader.module.css'
+
 export default function Loading() {
     return (
-        <svg className="rotating h-36 w-36" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 100">
+        <svg className={`rotating h-36 w-36 ${styles.rotating}`} xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 100">
             <path d="M 30 50
 		a 1 1 1 0 1 40 0
 		h-12.5

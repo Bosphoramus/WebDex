@@ -7,8 +7,9 @@ export default function MainLayout({ children }) {
         <>
         <Head>
             <title>Antonio's WebDex</title>
+            <meta name="color-scheme" content="dark light"></meta>
         </Head>
-        <div className="pt-20">
+        <div className="pt-20 dark:bg-black dark:text-white">
             <Header />
             <main className="container mx-auto px-5">
                 {children}
