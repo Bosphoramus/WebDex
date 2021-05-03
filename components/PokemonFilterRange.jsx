@@ -14,7 +14,7 @@ const PokemonFilterRange = ({ pokemonRangeFilter, setPokemonRangeFilter }) => {
     let max = maxPokemonQuery.data?.count || 1
     const STEP = 1;
     const MIN = 0;
-    const COLORS = ['gray', 'red', 'gray'];
+    const COLORS = ['#686868', 'red', '#686868'];
 
     if (maxPokemonQuery.isLoading) {
         return (

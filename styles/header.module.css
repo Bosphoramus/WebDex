@@ -1,0 +1,7 @@
+@supports ((backdrop-filter: blur(10px))) or (-webkit-backdrop-filter: blur(10px)) {
+    .headerBg {
+        background: transparent;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+}

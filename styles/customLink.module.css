@@ -1,0 +1,6 @@
+.selected {
+	color: white;
+    background-color: red;
+    border-radius: 50rem;
+	font-weight: bold;
+}
