@@ -3,7 +3,7 @@ export default function ProjectPresentation() {
         <div className="space-y-6 py-4 leading-relaxed">
             <div className="flex justify-center">
                 <a href="/pokedex">
-                    <img src="readme.svg" alt="presentation graphic" decoding="async" className="dark:shadow-lg-invert" />
+                    <img src="readme.svg" alt="presentation graphic" decoding="async" />
                 </a>
             </div>
             <div className="space-y-10">
