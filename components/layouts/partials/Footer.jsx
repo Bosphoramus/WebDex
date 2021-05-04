@@ -1,16 +1,12 @@
 import Link from 'next/link'
+import FullLogo from './FullLogo'
 import Logo from './Logo'
 
 export default function Footer() {
     return (
         <footer className="flex justify-center h-20">
             <div className="container flex p-5">
-                <Link href="/">
-                    <a className="flex items-center space-x-3">
-                        <Logo />
-                        <span className="text-xl font-medium">WebDex</span>
-                    </a>
-                </Link>
+                <FullLogo />
                 <div className="ml-4 pl-4 border-l border-gray-400 flex items-center text-base mr-auto">
                     <span className="text-sm text-gray-500">© {new Date().getFullYear()} Antonio Ramírez</span>
                 </div>
