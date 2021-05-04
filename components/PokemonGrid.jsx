@@ -61,7 +61,7 @@ export default function PokemonGrid({ pokemonRangeFilter }) {
             {
                 pokemonQuery.data.map(function (pokemon) {
                     return (
-                        <div key={pokemon.id} className="flex flex-col justify-between border-2 border-gray-200 dark:border-gray-600 border-opacity-60 p-5 rounded-lg shadow-lg">
+                        <div key={pokemon.id} className="flex flex-col justify-between border-2 border-gray-200 dark:border-gray-600 hover:border-red-400 border-opacity-60 p-5 rounded-lg shadow-lg dark:shadow-lg-invert">
                             <div>
                                 <img className="lg:h-48 md:h-36 mx-auto" src={pokemon.sprites.front_default} alt={pokemon.id} />
                             </div>
@@ -71,7 +71,7 @@ export default function PokemonGrid({ pokemonRangeFilter }) {
                                 <p className="hidden md:block">{pokemon.description.replace(/(\f)/gm, " ")}</p>
                             </div>
                             <div className="md:mt-2">
-                                <a className="text-red-500 inline-flex items-center md:mb-2 lg:mb-0" href={`https://pokemon.fandom.com/wiki/${pokemon.name}`}>Learn More
+                                <a className="text-red-500 inline-flex items-center md:mb-2 lg:mb-0 hover:animate-bounce" href={`https://pokemon.fandom.com/wiki/${pokemon.name}`}>Learn More
                                                 <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} fill="none" strokeLinecap="round" strokeLinejoin="round">
                                         <path d="M5 12h14" />
                                         <path d="M12 5l7 7-7 7" />
