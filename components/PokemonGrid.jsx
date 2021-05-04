@@ -40,7 +40,7 @@ export default function PokemonGrid({ pokemonRangeFilter }) {
             <div className="flex justify-center h-screen">
                 <div>
                     <Loading />
-                    <p className="font-bold">Cargando Pokemon</p>
+                    <p className="font-bold">Loading Pokemon</p>
                 </div>
             </div>
         )
@@ -50,7 +50,7 @@ export default function PokemonGrid({ pokemonRangeFilter }) {
         return (
             <div className="flex justify-center h-screen">
                 <div>
-                    <p>Error cargando Pokemon: {pokemonQuery.error?.message}</p>
+                    <p>An error ocurred while loading Pokemon: {pokemonQuery.error?.message}</p>
                 </div>
             </div>
         )
@@ -61,24 +61,22 @@ export default function PokemonGrid({ pokemonRangeFilter }) {
             {
                 pokemonQuery.data.map(function (pokemon) {
                     return (
-                        <div key={pokemon.id}>
-                            <div className="h-full border-2 border-gray-200 dark:border-gray-600 border-opacity-60 rounded-lg overflow-hidden shadow-lg">
+                        <div key={pokemon.id} className="flex flex-col justify-between border-2 border-gray-200 dark:border-gray-600 border-opacity-60 p-5 rounded-lg shadow-lg">
+                            <div>
                                 <img className="lg:h-48 md:h-36 mx-auto" src={pokemon.sprites.front_default} alt={pokemon.id} />
-                                <div className="p-6">
-                                    <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">#{pokemon.id}</h2>
-                                    <h1 className="title-font text-lg font-medium font-bold mb-3">{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h1>
-                                    <div className="hidden md:block mb-2">
-                                        {pokemon.description.replace(/(\f)/gm, " ")}
-                                    </div>
-                                    <div className="flex items-center flex-wrap ">
-                                        <a className="text-red-500 inline-flex items-center md:mb-2 lg:mb-0" href={`https://pokemon.fandom.com/wiki/${pokemon.name}`}>Learn More
+                            </div>
+                            <div>
+                                <span className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">#{pokemon.id}</span>
+                                <p className="title-font text-lg font-medium font-bold mb-3">{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</p>
+                                <p className="hidden md:block">{pokemon.description.replace(/(\f)/gm, " ")}</p>
+                            </div>
+                            <div className="md:mt-2">
+                                <a className="text-red-500 inline-flex items-center md:mb-2 lg:mb-0" href={`https://pokemon.fandom.com/wiki/${pokemon.name}`}>Learn More
                                                 <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} fill="none" strokeLinecap="round" strokeLinejoin="round">
-                                                <path d="M5 12h14" />
-                                                <path d="M12 5l7 7-7 7" />
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
+                                        <path d="M5 12h14" />
+                                        <path d="M12 5l7 7-7 7" />
+                                    </svg>
+                                </a>
                             </div>
                         </div>
                     )

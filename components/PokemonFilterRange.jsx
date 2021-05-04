@@ -21,7 +21,7 @@ const PokemonFilterRange = ({ pokemonRangeFilter, setPokemonRangeFilter }) => {
             <div className="flex justify-center">
                 <div>
                     <Loading />
-                    <p>Cargando el número máximo de Pokemon</p>
+                    <p>Loading maximum pokemon number</p>
                 </div>
             </div>
         )
@@ -31,7 +31,7 @@ const PokemonFilterRange = ({ pokemonRangeFilter, setPokemonRangeFilter }) => {
         return (
             <div className="flex justify-center">
                 <div>
-                    <p>Error cargando el número máximo de Pokemon: {maxPokemonQuery.error?.message}</p>
+                    <p>An error ocurred while loading maximum pokemon number: {maxPokemonQuery.error?.message}</p>
                 </div>
             </div>
         )

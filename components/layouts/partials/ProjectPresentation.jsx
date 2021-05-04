@@ -1,9 +1,11 @@
 export default function ProjectPresentation() {
     return (
-        <div className="space-y-6">
-            <a href="/pokedex">
-                <img src="readme.svg" alt="presentation graphic" />
-            </a>
+        <div className="space-y-6 py-4 leading-relaxed">
+            <div className="flex justify-center">
+                <a href="/pokedex">
+                    <img src="readme.svg" alt="presentation graphic" decoding="async" />
+                </a>
+            </div>
             <div className="space-y-10">
                 <article className="space-y-4">
                     <h2 className="font-bold text-xl bg-gradient-to-r from-blue-700 via-blue-800 to-gray-900 bg-clip-text text-transparent">Project Summary</h2>
@@ -17,6 +19,7 @@ export default function ProjectPresentation() {
                         <li>Tailwind CSS</li>
                         <li>react-range</li>
                     </ul>
+                    <p>The site has a dark mode variant, triggered by the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme" className="text-blue-600 dark:text-blue-500 hover:underline">prefers-color-scheme</a> media query, and implemented using <a href="https://tailwindcss.com/docs/dark-mode" className="text-blue-600 dark:text-blue-500 hover:underline">Tailwind CSS</a>.</p>
                     <p>This is a <a href="https://nextjs.org/" className="text-blue-600 dark:text-blue-500 hover:underline">Next.js</a> project bootstrapped with <a href="https://github.com/vercel/next.js/tree/canary/packages/create-next-app" className="text-blue-600 dark:text-blue-500 hover:underline bg-gray-200 dark:bg-gray-800 rounded-lg p-1">create-next-app</a>.</p>
                 </article>
                 <article className="space-y-4">
@@ -30,8 +33,6 @@ export default function ProjectPresentation() {
                     </div>
                     <p>Open <a href="http://localhost:3000" className="text-blue-600 dark:text-blue-500 hover:underline">http://localhost:3000</a> with your browser to see the result.</p>
                     <p>You can start editing the page by modifying <span className="bg-gray-200 dark:bg-gray-800 rounded-lg p-1">pages/index.js</span>. The page auto-updates as you edit the file.</p>
-                    <p><a href="https://nextjs.org/docs/api-routes/introduction" className="text-blue-600 dark:text-blue-500 hover:underline">API routes</a> can be accessed on <a href="http://localhost:3000/api/hello" className="text-blue-600 dark:text-blue-500 hover:underline">http://localhost:3000/api/hello</a>. This endpoint can be edited in <span className="bg-gray-200 dark:bg-gray-800 rounded-lg p-1">pages/api/hello.js</span>.</p>
-                    <p>The <span className="bg-gray-200 dark:bg-gray-800 rounded-lg p-1">pages/api</span> directory is mapped to <span className="bg-gray-200 dark:bg-gray-800 rounded-lg p-1">/api/*</span>. Files in this directory are treated as <a href="https://nextjs.org/docs/api-routes/introduction" className="text-blue-600 dark:text-blue-500 hover:underline">API routes</a> instead of React pages.</p>
                 </article>
                 <article className="space-y-4">
                     <h2 className="font-bold text-xl bg-gradient-to-r from-red-800 via-yellow-600 to-yellow-500 bg-clip-text text-transparent">Learn More</h2>
