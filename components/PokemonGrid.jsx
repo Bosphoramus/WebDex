@@ -61,7 +61,7 @@ export default function PokemonGrid({ pokemonRangeFilter }) {
             {
                 pokemonQuery.data.map(function (pokemon) {
                     return (
-                        <div key={pokemon.id} className="flex flex-col justify-between border-2 border-gray-200 dark:border-gray-600 hover:border-red-400 dark:hover:border-red-600 border-opacity-60 p-5 rounded-lg shadow-lg dark:shadow-lg-invert">
+                        <div key={pokemon.id} className="flex flex-col justify-between border-2 border-gray-200 hover:border-red-400 border-opacity-60 p-5 rounded-lg shadow-lg dark:border-gray-600 dark:hover:border-red-600 dark:shadow-lg-invert">
                             <div>
                                 <img className="lg:h-48 md:h-36 mx-auto" src={pokemon.sprites.front_default} alt={pokemon.id} />
                             </div>

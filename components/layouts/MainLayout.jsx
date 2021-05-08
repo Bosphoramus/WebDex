@@ -1,21 +1,25 @@
 import Head from 'next/head'
 import Header from '~/components/layouts/partials/Header'
 import Footer from '~/components/layouts/partials/Footer'
+import { useContext } from 'react'
+import { ThemeContext } from '~/contexts/themeContext'
 
 export default function MainLayout({ children }) {
+    const { theme } = useContext(ThemeContext)
+
     return (
         <>
-        <Head>
-            <title>Tony's WebDex</title>
-            <meta name="color-scheme" content="dark light"></meta>
-        </Head>
-        <div className="pt-20 dark:bg-black dark:text-white">
-            <Header />
-            <main className="container mx-auto px-5">
-                {children}
-            </main>
-            <Footer />
-        </div>
+            <Head>
+                <title>Tony's WebDex</title>
+                <meta name="color-scheme" content={`${theme === 'dark' ? 'dark' : 'light'}`}></meta>
+            </Head>
+                <div className="pt-20 bg-white dark:bg-black dark:text-white text-black">
+                    <Header />
+                    <main className="container mx-auto px-5">
+                        {children}
+                    </main>
+                    <Footer />
+                </div>
         </>
     )
 }
