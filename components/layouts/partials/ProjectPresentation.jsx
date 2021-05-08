@@ -4,14 +4,14 @@ import ProjectPresentationAnimation from "./ProjectPresentationAnimation";
 export default function ProjectPresentation() {
     return (
         <div className="space-y-6 py-4 leading-relaxed">
-            <Link href="/pokedex">
-                <a>
+            <Link href="/">
+                <a href="/">
                     <ProjectPresentationAnimation />
                 </a>
             </Link>
             <div className="space-y-10">
                 <article className="space-y-4">
-                    <h2 className="font-bold text-xl bg-gradient-to-r from-blue-700 via-blue-800 to-gray-900 bg-clip-text text-transparent">Project Summary</h2>
+                    <h2 className="font-bold text-xl bg-gradient-to-r from-blue-700 via-blue-800 to-gray-900 bg-clip-text text-transparent">Project Information</h2>
                     <hr />
                     <p>Small project in which i tested some libraries/technologies i was interested in. All data is fetched from the <a href="https://pokeapi.co" className="text-blue-600  hover:underline dark:text-blue-500">PokeApi</a>.</p>
                     <p>This project's repository: <a href="https://github.com/Bosphoramus/WebDex" className="text-blue-600  hover:underline dark:text-blue-500">GitHub</a></p>

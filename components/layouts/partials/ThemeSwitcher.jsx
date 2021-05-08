@@ -18,17 +18,19 @@ export default function ThemeSwitcher() {
             {({ open }) => (
                 <>
                     <div>
-                        <Menu.Button className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium bg-black rounded-md bg-opacity-30 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
-                            <div className="hidden sm:block">
+                        <Menu.Button className="inline-flex rounded-full justify-center w-full px-4 py-2 text-sm font-medium text-white bg-black sm:rounded-md bg-opacity-30 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+                            <div>
                                 {theme == 'dark'
-                                    ? <p className="mr-2">🌚</p>
-                                    : <p className="mr-2">🌞</p>}
+                                    ? <p className="sm:mr-2">🌚</p>
+                                    : <p className="sm:mr-2">🌞</p>}
                             </div>
-                            Theme
-                            <ChevronDownIcon
-                                className="w-5 h-5 ml-2 -mr-1 text-violet-200 hover:text-violet-100 hidden sm:block"
-                                aria-hidden="true"
-                            />
+                            <div className="flex">
+                                <span className="hidden sm:block">Theme</span>
+                                <ChevronDownIcon
+                                    className="w-5 h-5 ml-2 -mr-1 text-violet-200 hover:text-violet-100 hidden sm:block"
+                                    aria-hidden="true"
+                                />
+                            </div>
                         </Menu.Button>
                     </div>
                     <Transition
