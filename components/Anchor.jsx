@@ -1,9 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import styles from '~/styles/customLink.module.css'
+import styles from '~/styles/anchor.module.css'
 
-const CustomLink = ({ href, children }) => {
+const Anchor = ({ href, children }) => {
     const router = useRouter()
 
     let className = children.props.className || ''
@@ -14,4 +14,4 @@ const CustomLink = ({ href, children }) => {
     return <Link href={href}>{React.cloneElement(children, { className })}</Link>
 }
 
-export default CustomLink
+export default Anchor

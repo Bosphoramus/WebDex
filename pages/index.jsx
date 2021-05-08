@@ -1,12 +1,17 @@
+import { useState } from 'react'
 import MainLayout from '~/components/layouts/MainLayout'
-import ProjectPresentation from '~/components/layouts/partials/ProjectPresentation'
+import PokemonFilterRange from '~/components/PokemonFilterRange'
+import PokemonGrid from '~/components/PokemonGrid'
 
-export default function Home() {
+export default function Pokedex() {
+  const [pokemonRangeFilter, setPokemonRangeFilter] = useState([0, 150])
+
   return (
-    <div className="flex justify-center items-center space-y-2">
-      <ProjectPresentation />
+    <div>
+      <PokemonFilterRange pokemonRangeFilter={pokemonRangeFilter} setPokemonRangeFilter={setPokemonRangeFilter} />
+      <PokemonGrid pokemonRangeFilter={pokemonRangeFilter} />
     </div>
   )
 }
 
-Home.Layout = MainLayout
+Pokedex.Layout = MainLayout
