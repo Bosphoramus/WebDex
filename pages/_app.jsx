@@ -1,5 +1,6 @@
 import React from 'react'
 import { QueryClientProvider, QueryClient } from 'react-query'
+import { ThemeProvider } from '~/contexts/themeContext'
 import '~/styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
@@ -15,9 +16,11 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <ThemeProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ThemeProvider>
     </QueryClientProvider>
   )
 }

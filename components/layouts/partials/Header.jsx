@@ -1,6 +1,7 @@
 import CustomLink from '~/components/CustomLink'
 import styles from '~/styles/header.module.css'
 import FullLogo from './FullLogo'
+import ThemeSwitcher from './ThemeSwitcher'
 
 export default function Header() {
     return (
@@ -12,6 +13,9 @@ export default function Header() {
                         <a className="mr-5 px-2 py-1">Pokedex</a>
                     </CustomLink>
                 </nav>
+                <div className="my-auto">
+                <ThemeSwitcher />
+                </div>
             </div>
         </header >
     )
