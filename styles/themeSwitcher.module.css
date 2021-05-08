@@ -1,6 +1,6 @@
 @supports ((backdrop-filter: blur())) {
-    .headerBg {
+    .menuItems {
         background-color: transparent !important;
-        backdrop-filter: blur(15px);
+        backdrop-filter: blur(25px);
     }
 }
