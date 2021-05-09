@@ -1,6 +1,6 @@
 import styles from '~/styles/presentationAnimation.module.css'
 
-export default function ProjectPresentationAnimation() {
+export default function ProjectInfoAnimation() {
     return (
         <div>
             <div className={`${styles.container}`}>

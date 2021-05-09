@@ -10,7 +10,7 @@ Technologies i used on this project:
 - react-range
 - Tailwind CSS
 
-The site has a dark mode variant, triggered by the [prefers-color-scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) media query, and implemented using [Tailwind CSS](https://tailwindcss.com/docs/dark-mode).
+The site has a dark mode variant, triggered by the [prefers-color-scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) media query initially, there also is a theme switcher button that can be used to change the theme manually, this preference is saved on localstorage so the theme preference is kept on subsequent visits to the site. Implemented using [Tailwind CSS](https://tailwindcss.com/docs/dark-mode) and some custom code.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
