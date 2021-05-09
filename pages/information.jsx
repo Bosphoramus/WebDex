@@ -1,10 +1,10 @@
 import MainLayout from '~/components/layouts/MainLayout'
-import ProjectPresentation from '~/components/layouts/partials/ProjectPresentation'
+import ProjectInfo from '~/components/layouts/partials/ProjectInfo'
 
 export default function Home() {
     return (
         <div className="flex justify-center items-center space-y-2">
-            <ProjectPresentation />
+            <ProjectInfo />
         </div>
     )
 }
