@@ -40,8 +40,7 @@ const getInitialTheme = () => {
         if (userMedia.matches) {
             return "dark"
         }
-    }
-    
-    return "light"
-}
 
+        return "dark"
+    }
+}

@@ -20,7 +20,7 @@ export default function ThemeSwitcher() {
                     <div>
                         <Menu.Button className="inline-flex rounded-full justify-center w-full px-4 py-2 text-sm font-medium text-white bg-black sm:rounded-md bg-opacity-30 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
                             <div>
-                                {theme == 'dark'
+                                {theme === "dark"
                                     ? <p className="sm:mr-2">🌚</p>
                                     : <p className="sm:mr-2">🌞</p>}
                             </div>

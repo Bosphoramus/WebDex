@@ -1,20 +1,26 @@
 import Anchor from '~/components/Anchor'
 import styles from '~/styles/header.module.css'
-import FullLogo from './FullLogo'
-import ThemeSwitcher from './ThemeSwitcher'
+import FullLogo from '~/components/layouts/partials/FullLogo'
+import Logo from '~/components/layouts/partials/Logo'
+import ThemeSwitcher from '~/components/layouts/partials/ThemeSwitcher'
 
 export default function Header() {
     return (
-        <header className={`flex justify-center h-20 fixed top-0 inset-x-0 z-10 bg-white dark:bg-black ${styles.headerBg}`}>
+        <header className={`flex justify-center h-20 fixed top-0 inset-x-0 z-10 bg-white dark:bg-black border-b border-gray-700 border-opacity-20 ${styles.headerBg}`}>
             <div className="container flex p-5">
-                <FullLogo />
+                <div className="hidden sm:flex">
+                    <FullLogo />
+                </div>
+                <div className="sm:hidden">
+                    <Logo />
+                </div>
                 <nav className="mr-auto ml-4 pl-4 border-l border-gray-400 flex items-center text-base">
                     <Anchor href="/information">
                         <a className="mr-5 px-2 py-1">Information</a>
                     </Anchor>
                 </nav>
                 <div className="my-auto">
-                <ThemeSwitcher />
+                    <ThemeSwitcher />
                 </div>
             </div>
         </header >
