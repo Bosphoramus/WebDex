@@ -25,8 +25,7 @@ export default function ProjectInfo() {
                     <p>The site has a dark mode variant, triggered by the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme" className="text-blue-600  hover:underline dark:text-blue-500">prefers-color-scheme</a> media query initially, 
                     there also is a theme switcher button that can be used to change the theme manually, this preference is saved on localstorage so the theme preference is kept on subsequent visits to the site. 
                     Implemented using <a href="https://tailwindcss.com/docs/dark-mode" className="text-blue-600  hover:underline dark:text-blue-500">Tailwind CSS</a>.</p>
-                    <p>This is a <a href="https://nextjs.org/" className="text-blue-600  hover:underline dark:text-blue-500">Next.js</a> project bootstrapped with 
-                    <a href="https://github.com/vercel/next.js/tree/canary/packages/create-next-app" className="text-blue-600  hover:underline bg-gray-200 rounded-lg p-1 dark:bg-gray-800 dark:text-blue-500">create-next-app</a>.</p>
+                    <p>This is a <a href="https://nextjs.org/" className="text-blue-600  hover:underline dark:text-blue-500">Next.js</a> project bootstrapped with <a href="https://github.com/vercel/next.js/tree/canary/packages/create-next-app" className="text-blue-600  hover:underline bg-gray-200 rounded-lg p-1 dark:bg-gray-800 dark:text-blue-500">create-next-app</a>.</p>
                 </article>
                 <article className="space-y-4">
                     <h2 className="font-bold text-xl bg-gradient-to-r from-green-500 to-green-700 bg-clip-text text-transparent">Getting Started</h2>
