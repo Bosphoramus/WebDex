@@ -15,7 +15,7 @@ export default function MainLayout({ children }) {
             </Head>
                 <div className="pt-20 bg-white dark:bg-black dark:text-white text-black">
                     <Header />
-                    <main className="container mx-auto px-5">
+                    <main className="container mx-auto p-5">
                         {children}
                     </main>
                     <Footer />

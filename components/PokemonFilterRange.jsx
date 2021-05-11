@@ -38,7 +38,7 @@ const PokemonFilterRange = ({ pokemonRangeFilter, setPokemonRangeFilter }) => {
     }
 
     return (
-        <div className="flex justify-center flex-wrap py-10">
+        <div className="flex justify-center flex-wrap py-10 px-3 sm:px-0">
             <Range
                 values={values}
                 step={STEP}

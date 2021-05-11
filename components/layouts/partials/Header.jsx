@@ -6,7 +6,7 @@ import ThemeSwitcher from '~/components/layouts/partials/ThemeSwitcher'
 
 export default function Header() {
     return (
-        <header className={`flex justify-center h-20 fixed top-0 inset-x-0 z-10 bg-white dark:bg-black border-b border-gray-700 border-opacity-20 ${styles.headerBg}`}>
+        <header className={`flex justify-center h-20 fixed top-0 inset-x-0 z-10 bg-white dark:bg-black border-b border-gray-700 dark:border-gray-400 border-opacity-20 dark:border-opacity-20 ${styles.headerBg}`}>
             <div className="container flex p-5">
                 <div className="hidden sm:flex">
                     <FullLogo />

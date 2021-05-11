@@ -67,7 +67,7 @@ export default function PokemonGrid({ pokemonRangeFilter }) {
                             </div>
                             <div>
                                 <span className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">#{pokemon.id}</span>
-                                <p className="title-font text-lg font-medium font-bold mb-3">{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</p>
+                                <p className="title-font text-lg font-medium mb-3">{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</p>
                                 <p className="hidden md:block">{pokemon.description.replace(/(\f)/gm, " ")}</p>
                             </div>
                             <div className="md:mt-2">

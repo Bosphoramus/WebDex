@@ -7,10 +7,10 @@ export default function Pokedex() {
   const [pokemonRangeFilter, setPokemonRangeFilter] = useState([0, 150])
 
   return (
-    <div className="mt-5">
+    <>
       <PokemonFilterRange pokemonRangeFilter={pokemonRangeFilter} setPokemonRangeFilter={setPokemonRangeFilter} />
       <PokemonGrid pokemonRangeFilter={pokemonRangeFilter} />
-    </div>
+    </>
   )
 }
 
