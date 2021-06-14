@@ -10,6 +10,6 @@
 	}
 }
 
-.pokemonCard :hover .pokemonPortrait {
+.pokemonCard:hover .pokemonPortrait {
     animation: bounce 1s infinite;
 }
