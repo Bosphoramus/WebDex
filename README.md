@@ -1,4 +1,4 @@
-<img src="./public/readme.svg" alt="repo-presentation"></img>
+<img src="./public/readme.svg" alt="readme-animation"></img>
 ## Project Summary
 
 Small project in which i tested some libraries/technologies i was interested in. All data is fetched from the [PokeApi](https://pokeapi.co/).
