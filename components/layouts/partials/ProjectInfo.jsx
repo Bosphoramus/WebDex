@@ -3,7 +3,7 @@ import ProjectInfoAnimation from "./ProjectInfoAnimation";
 
 export default function ProjectInfo() {
     return (
-        <div className="space-y-6 py-4 leading-relaxed max-w-4xl">
+        <div className="space-y-6 py-4 leading-relaxed sm:w-3/4">
             <Link href="/">
                 <a href="/">
                     <ProjectInfoAnimation />
