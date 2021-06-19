@@ -1,5 +1,6 @@
 import { useQuery } from 'react-query'
 import Loading from './layouts/partials/Loading'
+import Image from 'next/image'
 import styles from '~/styles/pokemonCard.module.css'
 
 async function getPokemon({ queryKey }) {
@@ -63,8 +64,8 @@ export default function PokemonGrid({ pokemonRangeFilter }) {
                 pokemonQuery.data.map(function (pokemon) {
                     return (
                         <div key={pokemon.id} className={`flex flex-col max-w-sm sm:max-w-none mx-auto justify-between border-2 border-gray-200 hover:border-red-400 border-opacity-60 p-5 rounded-lg shadow-lg dark:border-gray-600 dark:hover:border-red-600 dark:shadow-lg-invert ${styles.pokemonCard}`}>
-                            <div>
-                                <img className={`lg:h-48 md:h-36 mx-auto ${styles.pokemonPortrait}`} src={pokemon.sprites.front_default} alt={pokemon.id} />
+                            <div className={`lg:h-48 md:h-36 mx-auto ${styles.pokemonPortrait}`}>
+                                <Image width="179" height="192" placeholder="blur" unoptimized src={pokemon.sprites.front_default} blurDataURL={pokemon.sprites.front_default} alt={`#${pokemon.id} - ${pokemon.name}'s portrait`} />
                             </div>
                             <div>
                                 <span className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">#{pokemon.id}</span>
