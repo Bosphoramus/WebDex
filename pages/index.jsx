@@ -1,17 +1,17 @@
 import { useState } from 'react'
 import MainLayout from '~/components/layouts/MainLayout'
-import PokemonFilterRange from '~/components/PokemonFilterRange'
-import PokemonGrid from '~/components/PokemonGrid'
+import PokemonRangeFilter from '~/components/PokemonRangeFilter'
+import PokemonList from '~/components/PokemonList'
 
-export default function Pokedex() {
+export default function WebDex() {
   const [pokemonRangeFilter, setPokemonRangeFilter] = useState([0, 150])
 
   return (
     <>
-      <PokemonFilterRange pokemonRangeFilter={pokemonRangeFilter} setPokemonRangeFilter={setPokemonRangeFilter} />
-      <PokemonGrid pokemonRangeFilter={pokemonRangeFilter} />
+      <PokemonRangeFilter pokemonRangeFilter={pokemonRangeFilter} setPokemonRangeFilter={setPokemonRangeFilter} />
+      <PokemonList pokemonRangeFilter={pokemonRangeFilter} />
     </>
   )
 }
 
-Pokedex.Layout = MainLayout
+WebDex.Layout = MainLayout

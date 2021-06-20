@@ -1,6 +1,6 @@
-import styles from '~/styles/loader.module.css'
+import styles from '~/styles/loadingSpinner.module.css'
 
-export default function Loading() {
+export default function LoadingSpinner() {
     return (
         <svg className={`rotating h-36 w-36 ${styles.rotating}`} xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 100">
             <path d="M 30 50

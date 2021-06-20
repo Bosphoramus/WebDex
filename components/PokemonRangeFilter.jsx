@@ -1,14 +1,14 @@
 import { Range, getTrackBackground } from 'react-range';
 import { useQuery } from 'react-query'
 import { useState } from 'react'
-import Loading from '~/components/layouts/partials/Loading'
+import LoadingSpinner from '~/components/layouts/partials/LoadingSpinner'
 
 async function getPokemonMax() {
     const res = await fetch('https://pokeapi.co/api/v2/pokemon')
     return res.json()
 }
 
-const PokemonFilterRange = ({ pokemonRangeFilter, setPokemonRangeFilter }) => {
+const PokemonRangeFilter = ({ pokemonRangeFilter, setPokemonRangeFilter }) => {
     const [values, setValues] = useState([pokemonRangeFilter[0], pokemonRangeFilter[1]]);
     const maxPokemonQuery = useQuery('POKEMON_MAX', getPokemonMax)
     let max = maxPokemonQuery.data?.count || 1
@@ -18,11 +18,9 @@ const PokemonFilterRange = ({ pokemonRangeFilter, setPokemonRangeFilter }) => {
 
     if (maxPokemonQuery.isLoading) {
         return (
-            <div className="flex justify-center">
-                <div>
-                    <Loading />
-                    <p>Loading maximum pokemon number</p>
-                </div>
+            <div className="flex flex-col items-center">
+                <LoadingSpinner />
+                <p className="font-bold">Loading maximum pokemon number</p>
             </div>
         )
     }
@@ -31,7 +29,7 @@ const PokemonFilterRange = ({ pokemonRangeFilter, setPokemonRangeFilter }) => {
         return (
             <div className="flex justify-center">
                 <div>
-                    <p>An error ocurred while loading maximum pokemon number: {maxPokemonQuery.error?.message}</p>
+                    <p className="font-bold">An error ocurred while loading maximum pokemon number: {maxPokemonQuery.error?.message}</p>
                 </div>
             </div>
         )
@@ -123,4 +121,4 @@ const PokemonFilterRange = ({ pokemonRangeFilter, setPokemonRangeFilter }) => {
     );
 };
 
-export default PokemonFilterRange;
+export default PokemonRangeFilter;

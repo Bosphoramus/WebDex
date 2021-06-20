@@ -1,5 +1,6 @@
+import { useState } from 'react'
 import { useQuery } from 'react-query'
-import Loading from './layouts/partials/Loading'
+import LoadingSpinner from './layouts/partials/LoadingSpinner'
 import Image from 'next/image'
 import styles from '~/styles/pokemonCard.module.css'
 
@@ -33,17 +34,17 @@ async function getPokemonSpeciesData(pokemonSpeciesURL) {
     return res.json()
 }
 
-export default function PokemonGrid({ pokemonRangeFilter }) {
+export default function PokemonList({ pokemonRangeFilter }) {
     const [offset, limit] = pokemonRangeFilter
     const pokemonQuery = useQuery(['POKEMON', offset, limit], getPokemon)
 
+    const [selectedId, setSelectedId] = useState(null)
+
     if (pokemonQuery.isLoading) {
         return (
-            <div className="flex justify-center h-screen">
-                <div>
-                    <Loading />
-                    <p className="font-bold">Loading Pokemon</p>
-                </div>
+            <div className="flex flex-col items-center h-screen">
+                <LoadingSpinner />
+                <p className="font-bold">Loading pokemon</p>
             </div>
         )
     }
@@ -52,7 +53,7 @@ export default function PokemonGrid({ pokemonRangeFilter }) {
         return (
             <div className="flex justify-center h-screen">
                 <div>
-                    <p>An error ocurred while loading Pokemon: {pokemonQuery.error?.message}</p>
+                    <p className="font-bold">An error ocurred while loading Pokemon: {pokemonQuery.error?.message}</p>
                 </div>
             </div>
         )
