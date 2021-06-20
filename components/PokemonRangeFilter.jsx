@@ -1,28 +1,29 @@
+import { useState, useContext } from 'react'
 import { Range, getTrackBackground } from 'react-range';
 import { useQuery } from 'react-query'
-import { useState } from 'react'
-import Loading from '~/components/layouts/partials/Loading'
+import LoadingSpinner from '~/components/layouts/partials/LoadingSpinner'
+import { ThemeContext } from '~/contexts/themeContext'
+
 
 async function getPokemonMax() {
     const res = await fetch('https://pokeapi.co/api/v2/pokemon')
     return res.json()
 }
 
-const PokemonFilterRange = ({ pokemonRangeFilter, setPokemonRangeFilter }) => {
+const PokemonRangeFilter = ({ pokemonRangeFilter, setPokemonRangeFilter }) => {
     const [values, setValues] = useState([pokemonRangeFilter[0], pokemonRangeFilter[1]]);
     const maxPokemonQuery = useQuery('POKEMON_MAX', getPokemonMax)
     let max = maxPokemonQuery.data?.count || 1
+    const { theme } = useContext(ThemeContext)
     const STEP = 1;
-    const MIN = 0;
-    const COLORS = ['#979797', 'red', '#979797'];
+    const MIN = 1;
+    const COLORS = [`${theme === "light" ? '#c1c1c1' : '#4b5563'}`, 'red', `${theme === "light" ? '#c1c1c1' : '#4b5563'}`];
 
     if (maxPokemonQuery.isLoading) {
         return (
-            <div className="flex justify-center">
-                <div>
-                    <Loading />
-                    <p>Loading maximum pokemon number</p>
-                </div>
+            <div className="flex flex-col items-center">
+                <LoadingSpinner />
+                <p className="font-bold">Loading maximum pokemon number</p>
             </div>
         )
     }
@@ -31,7 +32,7 @@ const PokemonFilterRange = ({ pokemonRangeFilter, setPokemonRangeFilter }) => {
         return (
             <div className="flex justify-center">
                 <div>
-                    <p>An error ocurred while loading maximum pokemon number: {maxPokemonQuery.error?.message}</p>
+                    <p className="font-bold">An error ocurred while loading maximum pokemon number: {maxPokemonQuery.error?.message}</p>
                 </div>
             </div>
         )
@@ -81,10 +82,10 @@ const PokemonFilterRange = ({ pokemonRangeFilter, setPokemonRangeFilter }) => {
                         {...props}
                         style={{
                             ...props.style,
-                            height: '42px',
-                            width: '42px',
-                            borderRadius: '4px',
-                            backgroundColor: '#FFF',
+                            height: '40px',
+                            width: '40px',
+                            borderRadius: '6px',
+                            backgroundColor: `${theme === "light" ? '#ffff' : '#111827'}`,
                             display: 'flex',
                             justifyContent: 'center',
                             alignItems: 'center',
@@ -113,7 +114,7 @@ const PokemonFilterRange = ({ pokemonRangeFilter, setPokemonRangeFilter }) => {
                             style={{
                                 height: '16px',
                                 width: '5px',
-                                backgroundColor: isDragged ? COLORS[index] : '#CCC'
+                                backgroundColor: isDragged ? COLORS[index] : `${theme === "light" ? '#c1c1c1' : '#4b5563'}`
                             }}
                         />
                     </div>
@@ -123,4 +124,4 @@ const PokemonFilterRange = ({ pokemonRangeFilter, setPokemonRangeFilter }) => {
     );
 };
 
-export default PokemonFilterRange;
+export default PokemonRangeFilter;
