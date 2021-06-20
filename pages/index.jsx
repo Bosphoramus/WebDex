@@ -4,7 +4,7 @@ import PokemonRangeFilter from '~/components/PokemonRangeFilter'
 import PokemonList from '~/components/PokemonList'
 
 export default function WebDex() {
-  const [pokemonRangeFilter, setPokemonRangeFilter] = useState([0, 150])
+  const [pokemonRangeFilter, setPokemonRangeFilter] = useState([1, 150])
 
   return (
     <>

@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState, useContext } from 'react'
+import { createContext, useEffect, useState } from 'react'
 
 export const ThemeContext = createContext()
 
@@ -32,7 +32,6 @@ export const ThemeProvider = ({ children }) => {
 const getInitialTheme = () => {
     if (typeof window !== "undefined" && window.localStorage) {
         const storedPrefs = window.localStorage.getItem("color-theme")
-        
         if (typeof storedPrefs === "string") {
             return storedPrefs
         }
@@ -42,6 +41,6 @@ const getInitialTheme = () => {
             return "dark"
         }
 
-        return "dark"
+        return "light"
     }
 }

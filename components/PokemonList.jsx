@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { useQuery } from 'react-query'
 import LoadingSpinner from './layouts/partials/LoadingSpinner'
 import Image from 'next/image'
@@ -11,7 +10,7 @@ async function getPokemon({ queryKey }) {
 }
 
 async function getPokemonIndex(offset, limit) {
-    const res = await fetch(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit - offset}`)
+    const res = await fetch(`https://pokeapi.co/api/v2/pokemon?offset=${offset - 1}&limit=${(limit - offset) + 1}`)
     return res.json()
 }
 
@@ -37,8 +36,6 @@ async function getPokemonSpeciesData(pokemonSpeciesURL) {
 export default function PokemonList({ pokemonRangeFilter }) {
     const [offset, limit] = pokemonRangeFilter
     const pokemonQuery = useQuery(['POKEMON', offset, limit], getPokemon)
-
-    const [selectedId, setSelectedId] = useState(null)
 
     if (pokemonQuery.isLoading) {
         return (
@@ -66,7 +63,7 @@ export default function PokemonList({ pokemonRangeFilter }) {
                     return (
                         <div key={pokemon.id} className={`flex flex-col max-w-sm sm:max-w-none mx-auto justify-between border-2 border-gray-200 hover:border-red-400 border-opacity-60 p-5 rounded-lg shadow-lg dark:border-gray-600 dark:hover:border-red-600 dark:shadow-lg-invert ${styles.pokemonCard}`}>
                             <div className={`lg:h-48 md:h-36 mx-auto ${styles.pokemonPortrait}`}>
-                                <Image width="179" height="192" placeholder="blur" unoptimized src={pokemon.sprites.front_default} blurDataURL={pokemon.sprites.front_default} alt={`#${pokemon.id} - ${pokemon.name}'s portrait`} />
+                                <Image width="179" height="192" placeholder="blur" unoptimized src={pokemon.sprites.front_default || 'missingno.png'} blurDataURL={pokemon.sprites.front_default || 'missingno.png'} alt={`#${pokemon.id} - ${pokemon.name}'s portrait`} />
                             </div>
                             <div>
                                 <span className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">#{pokemon.id}</span>
@@ -75,7 +72,7 @@ export default function PokemonList({ pokemonRangeFilter }) {
                             </div>
                             <div className="md:mt-2">
                                 <a className="text-red-500 inline-flex items-center md:mb-2 lg:mb-0 hover:animate-bounce" href={`https://pokemon.fandom.com/wiki/${pokemon.name}`}>Learn More
-                                                <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} fill="none" strokeLinecap="round" strokeLinejoin="round">
+                                    <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} fill="none" strokeLinecap="round" strokeLinejoin="round">
                                         <path d="M5 12h14" />
                                         <path d="M12 5l7 7-7 7" />
                                     </svg>

@@ -1,10 +1,11 @@
+import { Fragment, useContext, useEffect, useState } from 'react'
 import { Menu, Transition } from '@headlessui/react'
-import { Fragment, useContext } from 'react'
 import { ChevronDownIcon, DesktopComputerIcon, MoonIcon, SunIcon, CheckIcon } from '@heroicons/react/solid';
 import { ThemeContext } from "~/contexts/themeContext"
 
 export default function ThemeSwitcher() {
     const { theme, setTheme } = useContext(ThemeContext)
+    const [currentThemeIndicator, setCurrentThemeIndicator] = useState("☯")
 
     const setSystemTheme = () => {
         const userMedia = window.matchMedia("(prefers-color-scheme: dark)")
@@ -13,6 +14,11 @@ export default function ThemeSwitcher() {
         setTheme(systemTheme)
     }
 
+    useEffect(
+        () => setCurrentThemeIndicator(theme === "light" ? "🌞" : "🌚"),
+        [theme, setCurrentThemeIndicator]
+    )
+
     return (
         <Menu as="div" className="relative inline-block text-left">
             {({ open }) => (
@@ -20,9 +26,9 @@ export default function ThemeSwitcher() {
                     <div>
                         <Menu.Button className="inline-flex rounded-full justify-center w-full px-4 py-2 text-sm font-medium text-white bg-gray-900 dark:bg-gray-700 dark:bg-opacity-30 sm:rounded-md bg-opacity-30 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
                             <div>
-                                {theme === "dark"
-                                    ? <p className="sm:mr-2">🌚</p>
-                                    : <p className="sm:mr-2">🌞</p>}
+                                <p className="sm:mr-2">
+                                    {currentThemeIndicator || "☯"}
+                                </p>
                             </div>
                             <div className="flex">
                                 <span className="hidden sm:block">Theme</span>
@@ -45,7 +51,7 @@ export default function ThemeSwitcher() {
                     >
                         <Menu.Items
                             static
-                            className={`bg-white dark:bg-black absolute right-0 w-56 mt-7 origin-top-right divide-y divide-gray-100 divide-opacity-7 dark:divide-gray-700 rounded-lg shadow-lg ring-black dark:ring-white ring-opacity-5 focus:outline-none dark:shadow-lg-invert border dark:border-gray-700`}
+                            className={`bg-white dark:bg-gray-800 absolute right-0 w-56 mt-7 origin-top-right divide-y divide-gray-100 divide-opacity-7 dark:divide-gray-700 rounded-lg shadow-lg ring-black dark:ring-white ring-opacity-5 focus:outline-none dark:shadow-lg-invert border dark:border-gray-700`}
                         >
                             <div className="px-1 py-1 ">
                                 <Menu.Item>
