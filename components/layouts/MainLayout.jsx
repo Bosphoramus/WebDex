@@ -10,7 +10,7 @@ export default function MainLayout({ children }) {
     return (
         <>
             <Head>
-                <title>Tony's WebDex</title>
+                <title>Tony&apos;s WebDex</title>
                 <meta name="color-scheme" content={`${theme === 'dark' ? 'dark' : 'light'}`}></meta>
                 <meta name="theme-color" content={`${theme === 'dark' ? '#000000' : '#ffffff'}`}></meta>
             </Head>

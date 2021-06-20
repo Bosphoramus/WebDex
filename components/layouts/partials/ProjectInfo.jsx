@@ -5,7 +5,7 @@ export default function ProjectInfo() {
     return (
         <div className="space-y-6 py-4 leading-relaxed sm:w-3/4">
             <Link href="/">
-                <a href="/">
+                <a>
                     <ProjectInfoAnimation />
                 </a>
             </Link>
@@ -14,7 +14,7 @@ export default function ProjectInfo() {
                     <h2 className="font-bold text-xl bg-gradient-to-r from-blue-700 via-blue-800 to-gray-900 bg-clip-text text-transparent">Project Information</h2>
                     <hr />
                     <p>Small project in which i tested some libraries/technologies i was interested in. All data is fetched from the <a href="https://pokeapi.co" className="text-blue-600  hover:underline dark:text-blue-500">PokeApi</a>.</p>
-                    <p>This project's repository: <a href="https://github.com/Bosphoramus/WebDex" className="text-blue-600  hover:underline dark:text-blue-500">GitHub</a></p>
+                    <p>This project&apos;s repository: <a href="https://github.com/Bosphoramus/WebDex" className="text-blue-600  hover:underline dark:text-blue-500">GitHub</a></p>
                     <p>Technologies i used on this project:</p>
                     <ul className="list-disc list-inside">
                         <li>NEXT.js</li>
@@ -48,7 +48,7 @@ export default function ProjectInfo() {
                         <li><a href="https://nextjs.org/learn" className="text-blue-600  hover:underline dark:text-blue-500">Learn Next.js</a> - an interactive Next.js tutorial.</li>
                         <li><a href="https://react-query.tanstack.com/" className="text-blue-600  hover:underline dark:text-blue-500">react-query</a> - main site</li>
                         <li><a href="https://tailwindcss.com/" className="text-blue-600  hover:underline dark:text-blue-500">TailwindCSS</a> - main site</li>
-                        <li><a href="https://www.npmjs.com/package/react-range" className="text-blue-600  hover:underline dark:text-blue-500">react-range</a> - npm's site</li>
+                        <li><a href="https://www.npmjs.com/package/react-range" className="text-blue-600  hover:underline dark:text-blue-500">react-range</a> - npm&apos;s site</li>
                     </ul>
                     <p>You can check out the <a href="https://github.com/vercel/next.js/" className="text-blue-600  hover:underline dark:text-blue-500">Next.js GitHub repository</a> - your feedback and contributions are welcome!</p>
                 </article>
