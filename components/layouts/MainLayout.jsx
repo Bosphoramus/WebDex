@@ -12,7 +12,7 @@ export default function MainLayout({ children }) {
             <Head>
                 <title>Tony&apos;s WebDex</title>
                 <meta name="color-scheme" content={`${theme === 'dark' ? 'dark' : 'light'}`}></meta>
-                <meta name="theme-color" content={`${theme === 'dark' ? '#000000' : '#ffffff'}`}></meta>
+                <meta name="theme-color" content={`${theme === 'dark' ? '#000000' : '#111827'}`}></meta>
             </Head>
                 <div className="pt-20 bg-white dark:bg-gray-900 dark:text-white text-black">
                     <Header />
