@@ -3,7 +3,7 @@ import FullLogo from './FullLogo'
 export default function Footer() {
     return (
         <footer className="flex justify-center h-20">
-            <div className="container flex p-5">
+            <div className="container flex p-5 justify-center">
                 <FullLogo />
                 <div className="ml-4 pl-4 border-l border-gray-400 flex items-center text-base mr-auto">
                     <span className="text-sm text-gray-500">© {new Date().getFullYear()} Antonio Ramírez</span>

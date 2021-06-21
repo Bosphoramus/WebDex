@@ -1,0 +1,6 @@
+@media screen and (display-mode: standalone) {
+    .main {
+        padding-top: 7rem !important;
+        -webkit-tap-highlight-color: transparent;
+    }
+}

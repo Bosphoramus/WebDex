@@ -1,6 +1,23 @@
 @supports ((backdrop-filter: blur())) {
-    .headerBg {
-        background-color: transparent !important;
-        backdrop-filter: blur(15px);
-    }
+	.headerBg {
+		background-color: transparent !important;
+		backdrop-filter: blur(15px);
+	}
+}
+
+@media screen and (display-mode: standalone) {
+	.header {
+		height: 110px !important;
+		padding-top: 2.5rem;
+	}
+}
+
+@media screen and (display-mode: standalone) {
+	@supports ((backdrop-filter: blur())) {
+		.headerBg {
+			background-color: rgba(17, 24, 39, 0.5) !important;
+			backdrop-filter: blur(15px);
+            color: white;
+		}
+	}
 }
