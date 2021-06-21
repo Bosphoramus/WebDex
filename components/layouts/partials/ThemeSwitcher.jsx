@@ -5,7 +5,9 @@ import { ThemeContext } from "~/contexts/themeContext"
 
 export default function ThemeSwitcher() {
     const { theme, setTheme } = useContext(ThemeContext)
-    const [currentThemeIndicator, setCurrentThemeIndicator] = useState("☯")
+    const [mounted, setMounted] = useState(false)
+
+    useEffect(() => setMounted(true), [])
 
     const setSystemTheme = () => {
         const userMedia = window.matchMedia("(prefers-color-scheme: dark)")
@@ -14,22 +16,19 @@ export default function ThemeSwitcher() {
         setTheme(systemTheme)
     }
 
-    useEffect(
-        () => setCurrentThemeIndicator(theme === "light" ? "🌞" : "🌚"),
-        [theme, setCurrentThemeIndicator]
-    )
-
     return (
         <Menu as="div" className="relative inline-block text-left">
             {({ open }) => (
                 <>
                     <div>
                         <Menu.Button className="inline-flex rounded-full justify-center w-full px-4 py-2 text-sm font-medium text-white bg-gray-900 dark:bg-gray-700 dark:bg-opacity-30 sm:rounded-md bg-opacity-30 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
-                            <div>
-                                <p className="sm:mr-2">
-                                    {currentThemeIndicator || "☯"}
-                                </p>
-                            </div>
+                            {mounted
+                                ? <div>
+                                        {mounted && theme === "light"
+                                            ? <p className="sm:mr-2">🌞</p>
+                                            : <p className="sm:mr-2">🌚</p>}
+                                </div>
+                                : null}
                             <div className="flex">
                                 <span className="hidden sm:block">Theme</span>
                                 <ChevronDownIcon

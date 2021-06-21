@@ -4,7 +4,6 @@ import { useQuery } from 'react-query'
 import LoadingSpinner from '~/components/layouts/partials/LoadingSpinner'
 import { ThemeContext } from '~/contexts/themeContext'
 
-
 async function getPokemonMax() {
     const res = await fetch('https://pokeapi.co/api/v2/pokemon')
     return res.json()
@@ -15,9 +14,9 @@ const PokemonRangeFilter = ({ pokemonRangeFilter, setPokemonRangeFilter }) => {
     const maxPokemonQuery = useQuery('POKEMON_MAX', getPokemonMax)
     let max = maxPokemonQuery.data?.count || 1
     const { theme } = useContext(ThemeContext)
-    const STEP = 1;
-    const MIN = 1;
-    const COLORS = [`${theme === "light" ? '#c1c1c1' : '#4b5563'}`, 'red', `${theme === "light" ? '#c1c1c1' : '#4b5563'}`];
+    const step = 1;
+    const min = 1;
+    const colors = [`${theme === "light" ? '#c1c1c1' : '#4b5563'}`, 'red', `${theme === "light" ? '#c1c1c1' : '#4b5563'}`];
 
     if (maxPokemonQuery.isLoading) {
         return (
@@ -42,8 +41,8 @@ const PokemonRangeFilter = ({ pokemonRangeFilter, setPokemonRangeFilter }) => {
         <div className="flex justify-center flex-wrap py-10 px-3 sm:px-0">
             <Range
                 values={values}
-                step={STEP}
-                min={MIN}
+                step={step}
+                min={min}
                 max={max}
                 onChange={(values) => setValues(values)}
                 onFinalChange={(values) => setPokemonRangeFilter(values)}
@@ -66,8 +65,8 @@ const PokemonRangeFilter = ({ pokemonRangeFilter, setPokemonRangeFilter }) => {
                                 borderRadius: '4px',
                                 background: getTrackBackground({
                                     values: values,
-                                    colors: COLORS,
-                                    min: MIN,
+                                    colors: colors,
+                                    min: min,
                                     max: max
                                 }),
                                 alignSelf: 'center'
@@ -85,14 +84,12 @@ const PokemonRangeFilter = ({ pokemonRangeFilter, setPokemonRangeFilter }) => {
                             height: '40px',
                             width: '40px',
                             borderRadius: '6px',
-                            backgroundColor: `${theme === "light" ? '#ffff' : '#111827'}`,
+                            backgroundColor: `${theme === "light" ? '#ffff' : '#1f2633'}`,
                             display: 'flex',
                             justifyContent: 'center',
                             alignItems: 'center',
-                            boxShadow: '0px 2px 6px #AAA'
-                        }}
-
-                    >
+                            boxShadow: `${theme === "light" ? '0 4px 15px #aaa' : '0 4px 15px #797979'}`
+                        }}>
                         <div
                             style={{
                                 position: 'absolute',
@@ -114,7 +111,7 @@ const PokemonRangeFilter = ({ pokemonRangeFilter, setPokemonRangeFilter }) => {
                             style={{
                                 height: '16px',
                                 width: '5px',
-                                backgroundColor: isDragged ? COLORS[index] : `${theme === "light" ? '#c1c1c1' : '#4b5563'}`
+                                backgroundColor: isDragged ? 'red' : `${theme === "light" ? '#c1c1c1' : '#4b5563'}`
                             }}
                         />
                     </div>
