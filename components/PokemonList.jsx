@@ -63,7 +63,7 @@ export default function PokemonList({ pokemonRangeFilter }) {
                     return (
                         <div key={pokemon.id} className={`flex flex-col max-w-sm sm:max-w-none mx-auto justify-between border-2 border-gray-200 hover:border-red-400 border-opacity-60 p-5 rounded-lg shadow-lg dark:border-gray-600 dark:hover:border-red-600 dark:shadow-lg-invert ${styles.pokemonCard}`}>
                             <a href={`https://pokemon.fandom.com/wiki/${pokemon.name}`} target="blank">
-                                <div className={`lg:h-48 md:h-36 mx-auto ${styles.pokemonPortrait}`}>
+                                <div className={`mx-auto ${styles.pokemonPortrait}`}>
                                     <Image width="179" height="192" placeholder="blur" unoptimized src={pokemon.sprites.front_default || 'missingno.png'} blurDataURL={pokemon.sprites.front_default || 'missingno.png'} alt={`#${pokemon.id} - ${pokemon.name}'s portrait`} />
                                 </div>
                             </a>
